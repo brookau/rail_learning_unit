@@ -55,22 +55,22 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     # @user = User.find(params[:id])
-    # @user.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
-    @user = Post.find(params[:id])
-
+    @user.destroy
     respond_to do |format|
-      if @user.destroy
-        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-        format.json { head :no_content }
-      else
-        format.html { redirect_to users_url, notice: 'Fail to destroyed.' }
-        format.json { head :no_content }
-      end
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
     end
+    # @user = User.find(params[:id])
+
+    # respond_to do |format|
+    #   if @user.destroy
+    #     format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { redirect_to users_url, notice: 'Fail to destroyed.' }
+    #     format.json { head :no_content }
+    #   end
+    # end
   end
 
   private
