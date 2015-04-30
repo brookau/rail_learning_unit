@@ -1,3 +1,16 @@
+== NOTE
+
+For window machine need to change the following line in order to run rails 4 with defaults generate code
+
+in file runtimes.rb in directory similar to C:\Ruby200-x64\lib\ruby\gems\2.0.0\gems\execjs-2.5.2\lib\execjs
+
+    JScript = ExternalRuntime.new(
+      name:        "JScript",
+      command:     "cscript //E:jscript //Nologo //U",
+      runner_path: ExecJS.root + "/support/jscript_runner.js",
+      encoding:    'UTF-16' # CScript with //U returns UTF-16LE
+    )
+
 == README
 
 This README would normally document whatever steps are necessary to get the
